@@ -1,0 +1,15 @@
+{
+    "alarm": false,
+    "guest_notify": false,
+    "lights_auto_shutdown_minutes": 60,
+    "force_phone_notifications": true,
+    "speaker_volume": 91,
+    "speaker_on": true,
+    "force_phone_notify": true,
+    "garage_control": true,
+    "empty_home_check_timer": 10,
+    "ignore_rf_sensors": false,
+    "guest_notifier": false,
+    "auto_lights": true,
+    "debug_mode": false
+}

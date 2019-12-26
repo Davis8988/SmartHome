@@ -1,0 +1,326 @@
+[
+    {
+        "id": "6a614953.9cbc98",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "29f441.3145bbc",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Test_Tab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "16c26e58.6aab12",
+        "type": "ui_group",
+        "z": "",
+        "name": "Test",
+        "tab": "29f441.3145bbc",
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "47c4eff6.543e5",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "abf84452.f7c398",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Test_tab2",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3203557.52906aa",
+        "type": "ui_group",
+        "z": "",
+        "name": "Test2",
+        "tab": "abf84452.f7c398",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d77744d6.f05148",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.1.151",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e519d0f4.f6bec",
+        "type": "inject",
+        "z": "6a614953.9cbc98",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "3d86a0c9.7a654"
+            ]
+        ]
+    },
+    {
+        "id": "3d86a0c9.7a654",
+        "type": "ui_text",
+        "z": "6a614953.9cbc98",
+        "group": "16c26e58.6aab12",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 680,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e27cce75.af4ba",
+        "type": "ui_text",
+        "z": "6a614953.9cbc98",
+        "group": "3203557.52906aa",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 650,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "73b85e6d.974f",
+        "type": "mqtt in",
+        "z": "6a614953.9cbc98",
+        "name": "",
+        "topic": "david",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d77744d6.f05148",
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "e27cce75.af4ba"
+            ]
+        ]
+    },
+    {
+        "id": "34f2b5f4.cec9ea",
+        "type": "ui_switch",
+        "z": "6a614953.9cbc98",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "16c26e58.6aab12",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "8f07995c.e4ddd8",
+                "ffffd13d.39193"
+            ]
+        ]
+    },
+    {
+        "id": "8f07995c.e4ddd8",
+        "type": "mqtt out",
+        "z": "6a614953.9cbc98",
+        "name": "",
+        "topic": "switch",
+        "qos": "",
+        "retain": "",
+        "broker": "d77744d6.f05148",
+        "x": 840,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e0c0bb78.bd4118",
+        "type": "mqtt in",
+        "z": "6a614953.9cbc98",
+        "name": "",
+        "topic": "switch",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d77744d6.f05148",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "34f2b5f4.cec9ea",
+                "27f9981f.f06cb8"
+            ]
+        ]
+    },
+    {
+        "id": "ffffd13d.39193",
+        "type": "debug",
+        "z": "6a614953.9cbc98",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 840,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "27f9981f.f06cb8",
+        "type": "debug",
+        "z": "6a614953.9cbc98",
+        "name": "in",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 360,
+        "y": 80,
+        "wires": []
+    }
+]
