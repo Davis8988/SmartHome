@@ -1,0 +1,51 @@
+version: '2'
+
+services:
+
+  mosquito:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    ports:
+    - "1883:1883"
+    - "9001:9001"
+    environment:
+    - test_var=-Xmx2048m
+    restart: unless-stopped
+
+  nodered:
+    image: nodered/node-red:1.0.2-10-arm32v7
+    container_name: nodered
+    ports:
+    - "1880:1880"
+    volumes:
+     - ./node-red:/data
+    environment:
+    - test_var=-Xmx2048m
+    restart: unless-stopped
+    #    privileged: true
+
+
+#  python_main:
+#    image: python-container
+#    container_name: pymain
+#   # restart: unless-stopped
+#    volumes:
+#     - ./:/smart-home
+#     - /data/text_to_speech:/data/text_to_speech
+#    privileged: true
+
+
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    command: -H unix:///var/run/docker.sock
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
