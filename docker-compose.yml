@@ -34,6 +34,23 @@ services:
 #     - /data/text_to_speech:/data/text_to_speech
 #    privileged: true
 
+  rpi-monitor:
+    image: michaelmiklis/rpi-monitor:latest
+    container_name: rpi-monitor
+    restart: unless-stopped
+    volumes:
+      - /opt/vc:/opt/vc
+      - /boot:/boot
+      - /sys:/dockerhost/sys:ro
+      - /etc:/dockerhost/etc:ro
+      - /proc:/dockerhost/proc:ro
+      - /usr/lib:/dockerhost/usr/lib:ro
+    ports:
+      - 8888:8888
+    devices:
+      - "/dev/vchiq:/dev/vchiq"
+      - "/dev/vcsm:/dev/vcsm"
+
 
   portainer:
     image: portainer/portainer
