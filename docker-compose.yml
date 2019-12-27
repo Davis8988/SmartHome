@@ -22,7 +22,7 @@ services:
     environment:
     - test_var=-Xmx2048m
     restart: always
-    #    privileged: true
+    privileged: true
 
 
 #  python_main:
@@ -78,6 +78,7 @@ services:
       - PGID=gid
       - PUID=uid
       - TZ=timezone
+    privileged: true
 
 volumes:
   portainer_data:
