@@ -64,5 +64,20 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
+  kodi-headless:
+    image: linuxserver/kodi-headless
+    container_name: kodi-headless
+    restart: always
+    ports:
+      - 8080:8080
+      - 9090:9090
+      - 9777:9777/udp
+    volumes:
+      - kodi_data:/config/.kodi
+    environment:
+      - PGID=gid
+      - PUID=uid
+      - TZ=timezone
+
 volumes:
   portainer_data:
