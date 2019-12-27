@@ -81,3 +81,4 @@ services:
 
 volumes:
   portainer_data:
+  kodi_data:
