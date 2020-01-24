@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
 
@@ -8,21 +8,17 @@ services:
     ports:
     - "1883:1883"
     - "9001:9001"
-    environment:
-    - test_var=-Xmx2048m
     restart: always
 
+# Discovers automatically the os architecture (armv6, armv7 etc..)
   nodered:
-    image: nodered/node-red:1.0.2-10-arm32v7
+    image: nodered/node-red:latest-minimal
     container_name: nodered
     ports:
     - "1880:1880"
     volumes:
      - ./node-red:/data
-    environment:
-    - test_var=-Xmx2048m
     restart: always
-    privileged: true
 
 
 #  python_main:
@@ -59,27 +55,9 @@ services:
     restart: always
     ports:
       - 9000:9000
-      - 8000:8000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
-  kodi-headless:
-    image: linuxserver/kodi-headless
-    container_name: kodi-headless
-    restart: always
-    ports:
-      - 8080:8080
-      - 9090:9090
-      - 9777:9777/udp
-    volumes:
-      - kodi_data:/config/.kodi
-    environment:
-      - PGID=gid
-      - PUID=uid
-      - TZ=timezone
-    privileged: true
-
 volumes:
   portainer_data:
-  kodi_data:
