@@ -12,9 +12,9 @@ echo -e "    ./ ./  \\||"
 echo -e "  ./ ./  ./ ||"
 echo -e " /  /   /  /  \\"
 echo -e "${BLUE}================"
-echo -e "${BLUE}=              ="
-echo -e "=  ${CYAN}Smart Home${BLUE}  ="
-echo -e "${ORANGE}=              ="
+echo -e "${BLUE}==            =="
+echo -e "== ${CYAN}Smart Home${BLUE} =="
+echo -e "${ORANGE}==            =="
 echo -e "================\n${NC}"
 
 
