@@ -14,4 +14,9 @@ echo -e "= ${CYAN}Smart Home${BLUE} ="
 echo -e "${ORANGE}=            ="
 echo -e "==============\n${NC}"
 
+
+echo Changing permissions
+sudo chmod -R 777 ./node-red
+
+echo Starting SmartHome stack..
 docker-compose up -d
