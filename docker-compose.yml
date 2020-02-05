@@ -48,16 +48,24 @@ services:
       - "/dev/vcsm:/dev/vcsm"
 
 
-  portainer:
-    image: portainer/portainer
-    container_name: portainer
-    command: -H unix:///var/run/docker.sock
+  # portainer:
+    # image: portainer/portainer
+    # container_name: portainer
+    # command: -H unix:///var/run/docker.sock
+    # restart: always
+    # ports:
+      # - 9000:9000
+    # volumes:
+      # - /var/run/docker.sock:/var/run/docker.sock
+      # - portainer_data:/data
+
+  ngrok:
+    image: wernight/ngrok
+    container_name: ngrok
+    command: ngrok http nodered:80
     restart: always
     ports:
-      - 9000:9000
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - 4040:4040
 
 volumes:
   portainer_data:
