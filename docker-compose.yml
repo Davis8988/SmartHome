@@ -60,7 +60,7 @@ services:
       # - portainer_data:/data
 
   ngrok:
-    image: wernight/ngrok
+    image: wernight/ngrok:armhf
     container_name: ngrok
     command: http nodered:80
     restart: always

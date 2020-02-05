@@ -22,4 +22,4 @@ echo Changing permissions
 sudo chmod -R 777 ./node-red
 
 echo Starting SmartHome stack..
-docker-compose up -d
+docker-compose up -d --remove-orphans
