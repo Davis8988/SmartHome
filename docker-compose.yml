@@ -14,8 +14,8 @@ services:
   nodered:
     image: nodered/node-red:latest-minimal
     container_name: nodered
-    expose:
-    - "1880"
+    ports:
+    - "1880:1880"
     volumes:
      - ./node-red:/data
     restart: always
@@ -66,7 +66,6 @@ services:
     restart: always
     ports:
       - 4040:4040
-      - 1880:1880
 
 volumes:
   portainer_data:
