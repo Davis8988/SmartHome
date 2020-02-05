@@ -62,7 +62,7 @@ services:
   ngrok:
     image: wernight/ngrok
     container_name: ngrok
-    command: ngrok http nodered:80
+    command: http nodered:80
     restart: always
     ports:
       - 4040:4040
