@@ -14,8 +14,8 @@ services:
   nodered:
     image: nodered/node-red:latest-minimal
     container_name: nodered
-    ports:
-    - "1880:1880"
+    expose:
+    - "1880"
     volumes:
      - ./node-red:/data
     restart: always
@@ -59,13 +59,14 @@ services:
       # - /var/run/docker.sock:/var/run/docker.sock
       # - portainer_data:/data
 
-  # ngrok:
-    # image: wernight/ngrok:armhf
-    # container_name: ngrok
-    # command: ngrok http nodered:80
-    # restart: always
-    # ports:
-      # - 4040:4040
+  ngrok:
+    image: wernight/ngrok:armhf
+    container_name: ngrok
+    command: ngrok http nodered:1880
+    restart: always
+    ports:
+      - 4040:4040
+      - 1880:1880
 
 volumes:
   portainer_data:
