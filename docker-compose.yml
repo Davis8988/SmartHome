@@ -18,7 +18,7 @@ services:
     image: nodered/node-red:latest-minimal
     container_name: nodered
     expose:
-    - "1880"
+    - 127.0.0.1:1880:1880
     volumes:
      - ./node-red:/data
     restart: always
