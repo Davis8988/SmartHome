@@ -71,10 +71,16 @@ services:
     container_name: ngrok
     command: ngrok http nodered:1880
     restart: always
+    stdin_open: true
+    tty: true
     ports:
-      - 4040:4040
+      - 127.0.0.1:4040:4040
     networks:
       - smart_home_net
+    environment:
+      - NGROK_AUTH=
+      - NGROK_PROTOCOL=http
+      - NGROK_PORT=nodred:4000
 
 
 volumes:
