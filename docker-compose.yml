@@ -9,8 +9,11 @@ services:
     - "1883:1883"
     - "9001:9001"
     restart: always
+    networks:
+      - smart_home_net
 
-# Discovers automatically the os architecture (armv6, armv7 etc..)
+# Image "nodered/node-red:latest-minimal" discovers 
+#   automatically the os architecture (armv6, armv7 etc..)
   nodered:
     image: nodered/node-red:latest-minimal
     container_name: nodered
@@ -19,6 +22,8 @@ services:
     volumes:
      - ./node-red:/data
     restart: always
+    networks:
+      - smart_home_net
 
 
 #  python_main:
@@ -46,6 +51,8 @@ services:
     devices:
       - "/dev/vchiq:/dev/vchiq"
       - "/dev/vcsm:/dev/vcsm"
+    networks:
+      - smart_home_net
 
 
   # portainer:
@@ -59,14 +66,19 @@ services:
       # - /var/run/docker.sock:/var/run/docker.sock
       # - portainer_data:/data
 
-  # ngrok:
-    # image: wernight/ngrok:armhf
-    # container_name: ngrok
-    # command: ngrok http nodered:1880
-    # restart: always
-    # ports:
-      # - 4040:4040
+  ngrok:
+    image: wernight/ngrok:armhf
+    container_name: ngrok
+    command: ngrok http nodered:1880
+    restart: always
+    ports:
+      - 4040:4040
+    networks:
+      - smart_home_net
 
 
 volumes:
   portainer_data:
+
+networks:
+  smart_home_net:
